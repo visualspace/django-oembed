@@ -19,9 +19,9 @@ class OembedAbstractBase(TitleAbstractBase,
 
     # Title is already in there
 
-    url = models.URLField(verify_exists=True)
+    url = models.URLField()
 
-    thumbnail_url = models.URLField(blank=True, verify_exists=True, editable=False)
+    thumbnail_url = models.URLField(blank=True, editable=False)
     thumbnail_width = models.SmallIntegerField(blank=True, null=True, editable=False)
     thumbnail_height = models.SmallIntegerField(blank=True, null=True, editable=False)
 
@@ -29,7 +29,7 @@ class OembedAbstractBase(TitleAbstractBase,
     provider_url = models.CharField(blank=True, max_length=255, editable=False)
 
     author_name = models.CharField(blank=True, max_length=255, editable=False)
-    author_url = models.URLField(blank=True, verify_exists=False, editable=False)
+    author_url = models.URLField(blank=True, editable=False)
 
 
 class Link(OembedAbstractBase):
